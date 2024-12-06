@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { ProductContext } from "../../services/ProductContext";
 import axios from "axios";
 import "./TablaProductos.css"
+import api from "../../services/api";
 function TablaProductos() {
   const { allProductos } = useContext(ProductContext);
 
@@ -28,10 +29,7 @@ function TablaProductos() {
   // Función para actualizar el producto
   const updateProduct = async (productoId, updateProduct) => {
     try {
-      await axios.put(
-        `http://localhost:8080/producto/update/${productoId}`,
-        updateProduct
-      );
+      const response = api.put(`/api/productos/update/${productoId}`,updateProduct)
       alert("Producto actualizado");
       setProductoEditado(null); // Cerrar el formulario después de la actualización
     } catch (error) {
@@ -41,11 +39,8 @@ function TablaProductos() {
 
   const activeProduct = async (productoid, producto) => {
     try {
-      await axios.put(
-        `http://localhost:8080/producto/active/${productoid}`,
-        producto
-      );
-      alert("El producto ahora se muestra en la lista");
+      const response = api.put(`/api/productos/active/${productoid}`,producto)
+      alert("El producto ahora se muestra en el catálogo");
     } catch (error) {
       console.error("Error al actualizar el producto", error);
     }
@@ -60,7 +55,7 @@ function TablaProductos() {
 
   const addProduct = async (producto) => {
     try {
-      await axios.post(`http://localhost:8080/producto/create`, producto);
+      const response = api.post(`/api/productos/create`, producto)
       setProductoNuevo(null);
       alert("Producto agregado");
     } catch (error) {

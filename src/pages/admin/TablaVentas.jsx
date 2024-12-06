@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./TablaVentas.css"
+import api from "../../services/api";
 function TablaVentas() {
 
   const [allVentas, setAllVentas] = useState([]);
 
   const getallVentas = async () => {
-    axios
-      .get("http://localhost:8080/api/ventas/getall")
-      .then((response) => setAllVentas(response.data))
-      .catch((error) => console.error(error));
+    try{
+      const response = await api.get("/api/ventas/getall")
+      setAllVentas(response.data)
+    }catch(error){
+      console.error("ERROR al obtener ventas ", error)
+    }
   };
 
   useEffect(() => {

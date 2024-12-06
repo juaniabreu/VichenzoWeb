@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import "./Home.css"
+import Login from '../auth/Login'
+import { AuthContext } from '../auth/AuthContext';
 function Home() {
+  const {user} = useContext(AuthContext);
   return (
     <div>
          <section className="hero">
@@ -8,8 +11,11 @@ function Home() {
           <h1>¡Bienvenido a TiendaOnline!</h1>
           <p>Calidad, tradición y pasión por las pastas artesanales.</p>
         </div>
+        
       </section>
-
+{!user &&
+      <Login/>
+    }
       <section className="about" id="nosotros">
         <h2>Sobre nosotros</h2>
         <p>
