@@ -1,0 +1,127 @@
+/* Contenedor principal */
+.productos-table-container {
+  padding: 20px;
+  background-color: #f2e9e4;
+  border-radius: 10px;
+}
+
+/* Botón agregar producto */
+.productos-agregar-boton {
+  padding: 10px 15px;
+  background-color: #4a4e69;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.productos-agregar-boton:hover {
+  background-color: #22223b;
+}
+
+/* Títulos */
+.productos-title {
+  color: #22223b;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.productos-subtitulo {
+  color: #4a4e69;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+/* Formularios */
+.productos-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.productos-input {
+  padding: 10px;
+  border: 1px solid #c9ada7;
+  border-radius: 5px;
+}
+
+/* Botones del formulario */
+.productos-botones {
+  display: flex;
+  gap: 10px;
+}
+
+.productos-boton {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.productos-boton.guardar {
+  background-color: #4a4e69;
+  color: white;
+}
+
+.productos-boton.guardar:hover {
+  background-color: #22223b;
+}
+
+.productos-boton.cancelar {
+  background-color: #c9ada7;
+  color: white;
+}
+
+.productos-boton.cancelar:hover {
+  background-color: #9a8c98;
+}
+
+/* Tabla de productos */
+.productos-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.productos-table th,
+.productos-table td {
+  border: 1px solid #c9ada7;
+  text-align: center;
+  padding: 10px;
+}
+
+.productos-table th {
+  background-color: #4a4e69;
+  color: white;
+}
+
+.productos-table .table-button {
+  padding: 5px 10px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.table-button.editar {
+  background-color: #4a4e69;
+  color: white;
+}
+
+.table-button.ocultar {
+  background-color: #c9ada7;
+  color: white;
+}
+
+.table-button.mostrar {
+  background-color: #9a8c98;
+  color: white;
+}
+
+.no-productos {
+  text-align: center;
+  color: #4a4e69;
+  font-style: italic;
+}

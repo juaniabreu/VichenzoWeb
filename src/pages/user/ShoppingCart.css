@@ -1,0 +1,106 @@
+/* Contenedor general del formulario */
+.formulario-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #F2E9E4;
+  }
+  
+  /* Formulario */
+  .formulario {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border: 1px solid #9A8C98;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Campos de texto */
+  .input-text {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #9A8C98;
+    border-radius: 5px;
+  }
+  
+  /* Campos de selección */
+  .select-field {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #9A8C98;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+  }
+  
+  /* Contenedor de envío a domicilio */
+  .envio-domicilio {
+    margin-bottom: 15px;
+  }
+  
+  /* Productos seleccionados */
+  .productos-seleccionados {
+    margin-top: 20px;
+    border-top: 1px solid #9A8C98;
+    padding-top: 10px;
+  }
+  
+  .producto-item {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #22223B;
+  }
+  
+  .botones-cantidad {
+    display: flex;
+    gap: 5px;
+    margin-top: 5px;
+  }
+  
+  /* Botones de cantidad */
+  .btn-cantidad {
+    background-color: #4A4E69;
+    color: #F2E9E4;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .btn-cantidad:hover {
+    background-color: #C9ADA7;
+  }
+  
+  /* Total */
+  .total {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #4A4E69;
+    text-align: center;
+  }
+  
+  /* Botón de confirmación */
+  .btn-submit {
+    background-color: #4A4E69;
+    color: #F2E9E4;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-submit:hover {
+    background-color: #C9ADA7;
+  }
+  

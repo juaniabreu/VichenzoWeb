@@ -1,0 +1,75 @@
+/* Contenedor principal del admin */
+.admin-container {
+    padding: 20px;
+    background-color: #F2E9E4;
+  }
+  
+  /* Contenedor de botones principales */
+  .botones-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Botones principales */
+  .btn-principal {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #F2E9E4;
+    background-color: #4A4E69;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-principal:hover {
+    background-color: #C9ADA7;
+  }
+  
+  /* Contenedor de tablas */
+  .tabla-container {
+    margin-top: 20px;
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Tablas */
+  .tabla {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+  
+  .tabla th, .tabla td {
+    padding: 10px;
+    border: 1px solid #9A8C98;
+  }
+  
+  .tabla th {
+    background-color: #4A4E69;
+    color: #F2E9E4;
+  }
+  
+  .tabla tr:nth-child(even) {
+    background-color: #F9F9F9;
+  }
+  
+  /* Botones de acción */
+  .btn-accion {
+    padding: 5px 10px;
+    background-color: #4A4E69;
+    color: #F2E9E4;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .btn-accion:hover {
+    background-color: #C9ADA7;
+  }
+  

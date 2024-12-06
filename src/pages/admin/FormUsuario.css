@@ -1,0 +1,71 @@
+/* Contenedor principal */
+.formulario-usuario-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f2e9e4; /* Fondo cálido */
+    border: 1px solid #c9ada7;
+    border-radius: 8px;
+  }
+  
+  /* Formulario */
+  .formulario-usuario {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    gap: 15px;
+  }
+  
+  /* Inputs */
+  .formulario-usuario-input {
+    padding: 10px;
+    border: 1px solid #9a8c98;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  /* Inputs: Focus */
+  .formulario-usuario-input:focus {
+    border-color: #4a4e69;
+    outline: none;
+    box-shadow: 0 0 5px #4a4e69;
+  }
+  
+  /* Contenedor de botones */
+  .formulario-usuario-botones {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Botones */
+  .formulario-usuario-boton {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Botón Activar */
+  .formulario-usuario-boton.activar {
+    background-color: #4a4e69;
+    color: #f2e9e4;
+  }
+  
+  .formulario-usuario-boton.activar:hover {
+    background-color: #22223b;
+  }
+  
+  /* Botón Cancelar */
+  .formulario-usuario-boton.cancelar {
+    background-color: #c9ada7;
+    color: #f2e9e4;
+  }
+  
+  .formulario-usuario-boton.cancelar:hover {
+    background-color: #9a8c98;
+  }
+  
