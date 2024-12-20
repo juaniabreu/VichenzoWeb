@@ -1,54 +1,98 @@
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #F2E9E4; /* Fondo cálido */
-    color: #22223B; /* Texto principal */
-  }
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #4A4E69;
-    color: #F2E9E4;
-  }
-  
-  .nav a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #F2E9E4;
-  }
-  
-  .hero {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #C9ADA7;
-    color: #22223B;
-  }
-  
-  .about, .contact {
-    padding: 20px;
-    background-color: #F2E9E4;
-  }
-  
-  h2 {
-    color: #4A4E69;
-  }
-  
-  .contact ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .contact ul li {
-    margin: 10px 0;
-  }
-  
-  .footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #4A4E69;
-    color: #F2E9E4;
-  }
-  
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  color: #2d2f70;
+  font-weight: bold;
+}
+
+p {
+  margin: 10px 0;
+}
+
+.hero {
+  background-color: #4a4cd3;
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: 10px;
+  margin: 20px auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin: 0;
+}
+
+.about, .contact {
+  background-color: #fff;
+  padding: 20px 30px;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+}
+
+.about h2, .contact h2 {
+  font-size: 24px;
+  color: #2d2f70;
+  margin-bottom: 10px;
+}
+
+.about p, .contact p {
+  font-size: 16px;
+  color: #555;
+}
+
+.contact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.contact strong {
+  color: #2d2f70;
+}
+
+button, input[type="submit"] {
+  background-color: #4a4cd3;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button:hover, input[type="submit"]:hover {
+  background-color: #3a3cb3;
+}
+
+.login {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  text-align: center;
+}

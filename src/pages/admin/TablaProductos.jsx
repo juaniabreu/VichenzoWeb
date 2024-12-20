@@ -4,7 +4,7 @@ import axios from "axios";
 import "./TablaProductos.css"
 import api from "../../services/api";
 function TablaProductos() {
-  const { allProductos } = useContext(ProductContext);
+  const { allProductos,getallProductos,setAllProductos} = useContext(ProductContext);
 
   // Estado para manejar el producto a editar
   const [productoEditado, setProductoEditado] = useState(null);
@@ -31,6 +31,7 @@ function TablaProductos() {
     try {
       const response = api.put(`/api/productos/update/${productoId}`,updateProduct)
       alert("Producto actualizado");
+      getallProductos();
       setProductoEditado(null); // Cerrar el formulario después de la actualización
     } catch (error) {
       console.error("Error al actualizar el producto", error);
@@ -40,6 +41,7 @@ function TablaProductos() {
   const activeProduct = async (productoid, producto) => {
     try {
       const response = api.put(`/api/productos/active/${productoid}`,producto)
+      getallProductos();
       alert("El producto ahora se muestra en el catálogo");
     } catch (error) {
       console.error("Error al actualizar el producto", error);
@@ -48,6 +50,7 @@ function TablaProductos() {
   const deleteProduct = async (productoid) => {
     try {
       await axios.delete(`http://localhost:8080/producto/delete/${productoid}`);
+      getallProductos();
     } catch (error) {
       console.error("Error al eliminar producto", error);
     }
@@ -69,7 +72,6 @@ function TablaProductos() {
       precio: 0,
     });
   };
-  // Función que se activa cuando se hace clic en "Editar"
   const editProduct = (producto) => {
     setProductoEditado({
       id: producto.id,
@@ -82,7 +84,7 @@ function TablaProductos() {
     <div className="productos-table-container">
     <button className="productos-agregar-boton" onClick={createProduct}>
       Agregar producto
-    </button>
+    </button> 
     <h2 className="productos-title">Lista de productos</h2>
     {productoNuevo && (
       <div className="productos-nuevo">

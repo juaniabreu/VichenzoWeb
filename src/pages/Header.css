@@ -1,33 +1,64 @@
-/* General del header */
-nav {
-    display: flex;
-    justify-content: flex-end; /* Alínea los elementos a la derecha */
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #4A4E69; /* Fondo del header */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  }
-  
-  /* Estilo de las listas */
-  nav li {
-    list-style: none;
-    margin: 0 10px; /* Espacio entre los links */
-  }
-  
-  /* Links del menú */
-  nav a {
-    text-decoration: none;
-    color: #F2E9E4; /* Color del texto */
-    font-size: 16px;
-    font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: all 0.3s ease; /* Transición suave */
-  }
-  
-  /* Efecto hover en los links */
-  nav a:hover {
-    background-color: #C9ADA7; /* Fondo más claro al pasar el mouse */
-    color: #22223B; /* Cambia el color del texto */
-  }
-  
+.header-nav {
+  background-color: #f5f5fa;
+  border-radius: 10px;
+  padding: 10px 20px; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  gap: 30px; 
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #000; 
+  font-size: 16px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #4a4cd3;
+}
+
+.nav-button {
+  background-color: #4a4cd3; 
+  color: #fff;
+  border: none;
+  border-radius: 20px; 
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: #3a3cb3;
+}
+
+.nav-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.nav-icon:hover {
+  opacity: 0.8;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}

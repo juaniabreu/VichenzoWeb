@@ -1,75 +1,102 @@
-/* Contenedor principal del admin */
 .admin-container {
-    padding: 20px;
-    background-color: #F2E9E4;
-  }
-  
-  /* Contenedor de botones principales */
-  .botones-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  
-  /* Botones principales */
-  .btn-principal {
-    padding: 10px 15px;
-    font-size: 16px;
-    color: #F2E9E4;
-    background-color: #4A4E69;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn-principal:hover {
-    background-color: #C9ADA7;
-  }
-  
-  /* Contenedor de tablas */
-  .tabla-container {
-    margin-top: 20px;
-    background-color: #FFFFFF;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Tablas */
-  .tabla {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-  }
-  
-  .tabla th, .tabla td {
-    padding: 10px;
-    border: 1px solid #9A8C98;
-  }
-  
-  .tabla th {
-    background-color: #4A4E69;
-    color: #F2E9E4;
-  }
-  
-  .tabla tr:nth-child(even) {
-    background-color: #F9F9F9;
-  }
-  
-  /* Botones de acción */
-  .btn-accion {
-    padding: 5px 10px;
-    background-color: #4A4E69;
-    color: #F2E9E4;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  
-  .btn-accion:hover {
-    background-color: #C9ADA7;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5fa;
+  color: #222;
+}
+
+.botones-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.btn-principal {
+  background-color: #e1e3f8;
+  color: #2d2f70;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-principal:hover {
+  background-color: #d2d4f4;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background-color: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+table th, table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  background-color: #e1e3f8;
+  color: #2d2f70;
+  font-weight: bold;
+}
+
+table td {
+  color: #333;
+}
+
+table tr:hover {
+  background-color: #f0f0ff;
+}
+
+.btn-accion {
+  color: #2d2f70;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 5px;
+}
+
+.btn-accion:hover {
+  text-decoration: underline;
+  color: #4a4cd3;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+button[type="submit"] {
+  background-color: #4a4cd3;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #3a3cb3;
+}

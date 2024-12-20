@@ -1,71 +1,69 @@
-/* Contenedor principal */
 .formulario-usuario-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    background-color: #f2e9e4; /* Fondo cálido */
-    border: 1px solid #c9ada7;
-    border-radius: 8px;
-  }
-  
-  /* Formulario */
-  .formulario-usuario {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 400px;
-    gap: 15px;
-  }
-  
-  /* Inputs */
-  .formulario-usuario-input {
-    padding: 10px;
-    border: 1px solid #9a8c98;
-    border-radius: 4px;
-    font-size: 16px;
-  }
-  
-  /* Inputs: Focus */
-  .formulario-usuario-input:focus {
-    border-color: #4a4e69;
-    outline: none;
-    box-shadow: 0 0 5px #4a4e69;
-  }
-  
-  /* Contenedor de botones */
-  .formulario-usuario-botones {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  /* Botones */
-  .formulario-usuario-boton {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  /* Botón Activar */
-  .formulario-usuario-boton.activar {
-    background-color: #4a4e69;
-    color: #f2e9e4;
-  }
-  
-  .formulario-usuario-boton.activar:hover {
-    background-color: #22223b;
-  }
-  
-  /* Botón Cancelar */
-  .formulario-usuario-boton.cancelar {
-    background-color: #c9ada7;
-    color: #f2e9e4;
-  }
-  
-  .formulario-usuario-boton.cancelar:hover {
-    background-color: #9a8c98;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  width: 100%;
+  max-width: 400px;
+}
+
+.formulario-usuario {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.formulario-usuario-input {
+  padding: 12px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.formulario-usuario-input:focus {
+  border-color: #4a4cd3;
+  box-shadow: 0 0 3px rgba(74, 76, 211, 0.5);
+}
+
+.formulario-usuario-botones {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.formulario-usuario-boton {
+  flex: 1;
+  padding: 10px 0;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formulario-usuario-boton.activar {
+  background-color: #4a4cd3;
+  color: #fff;
+}
+
+.formulario-usuario-boton.activar:hover {
+  background-color: #3a3cb3;
+}
+
+.formulario-usuario-boton.cancelar {
+  background-color: #e1e3f8;
+  color: #4a4cd3;
+}
+
+.formulario-usuario-boton.cancelar:hover {
+  background-color: #d2d4f4;
+}

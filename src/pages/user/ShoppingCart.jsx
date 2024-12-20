@@ -2,30 +2,53 @@ import React, { useState, useContext, useEffect } from "react";
 import { CartContext } from "../../services/CartContext";
 import axios from "axios";
 import "./ShoppingCart.css"
+import api from "../../services/api";
 
 
 function ShoppingCart() {
-  const { cart } = useContext(CartContext);
+  const { cart,setCart} = useContext(CartContext);
   const [total, setTotal] = useState(
     cart.reduce((sum, producto) => sum + producto.precio * producto.quantity, 0)
   );
 
   // Estados para los select
   const [cuit,setCuit]=useState("")
+  const [telefono,setTelefono]=useState("")
   const [razonSocial,setRazonSocial]=useState("")
   const [tipoEnvio, setTipoEnvio] = useState("");
   const [formaPago, setFormaPago] = useState("");
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setCliente({ ...cliente, [name]: value });
-  };
+  const zonasDeEntrega = [
+    "Belgrano",
+    "Coghlan",
+    "Núñez",
+    "Saavedra",
+    "Colegiales",
+    "Caballito",
+    "Almagro",
+    "Villa crespo",
+    "Villa urquiza",
+    "Palermo",
+    "Villa ortuzar",
+    "Chacarita",
+    "Recoleta"
+  ];
 
   const handleSelectChange = (e) => {
     const { name, value } = e.target;
     if (name === "tipoEnvio") {
       setTipoEnvio(value);
-    } else if (name === "formaPago") {
+    } else if (name === "formaPago") {  
       setFormaPago(value);
+    }
+  };
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    if (name === "cuit") {
+      setCuit(value);
+    } else if (name === "razonsocial") {
+      setRazonSocial(value);
+    }else if(name === "telefono"){
+      setTelefono(value)
     }
   };
 
@@ -37,6 +60,7 @@ function ShoppingCart() {
       razonSocial,
       cuit,
       total,
+      telefono,
       tipoEnvio,
       formaPago,
       productos: cart.map((item) => ({
@@ -50,7 +74,13 @@ function ShoppingCart() {
     console.log(venta); // Ver el objeto de venta antes de enviarlo
 
     try {
-      const response = await axios.post("http://localhost:8080/ventas", venta);
+      const response = await api.post("api/ventas", venta);
+      setCuit("")
+      setFormaPago("")
+      setRazonSocial("")
+      setTipoEnvio("")
+      setTelefono("")
+      setCart([])
       alert("Venta realizada con éxito");
     } catch (error) {
       console.error("Error al realizar la venta", error);
@@ -59,25 +89,7 @@ function ShoppingCart() {
   return (
     <div className="formulario-container">
     <form className="formulario" onSubmit={handleSubmit}>
-      <input
-        className="input-text"
-        type="text"
-        placeholder="Razón social"
-        name="razonsocial"
-        value={razonSocial}
-        onChange={handleInputChange}
-        required
-      />
-      <input
-        className="input-text"
-        type="text"
-        placeholder="CUIT"
-        name="cuit"
-        value={cuit}
-        onChange={handleInputChange}
-        required
-      />
-      <select
+    <select
         className="select-field"
         name="formaPago"
         value={formaPago}
@@ -88,6 +100,26 @@ function ShoppingCart() {
         <option value="efectivo">Efectivo</option>
         <option value="transferencia">Transferencia</option>
       </select>
+      {formaPago=== "transferencia" ?(<div><input
+      className="input-text"
+      type="text"
+      placeholder="Razón social"
+      name="razonsocial"
+      value={razonSocial}
+      onChange={handleInputChange}
+      required
+    />
+    <input
+      className="input-text"
+      type="text"
+      placeholder="CUIT"
+      name="cuit"
+      value={cuit}
+      onChange={handleInputChange}
+      required
+    /></div>):null}
+      
+  
       <select
         className="select-field"
         name="tipoEnvio"
@@ -104,10 +136,13 @@ function ShoppingCart() {
         <div className="envio-domicilio">
           <select className="select-field" name="localidad" required>
             <option value="">Selecciona localidad</option>
-            <option value="zonaa">Zona A</option>
-            <option value="zonab">Zona B</option>
+            {zonasDeEntrega.map((zona,index)=>(
+              <option key={index} value={zona}>
+                {zona}
+              </option>
+            ))}
           </select>
-          <input className="input-text" type="text" name="direccion" placeholder="Dirección" required />
+          <input className="input-text" type="text" name="direccion" placeholder="Dirección, verifique que se encuentre dentro de la zona establecida" required />
         </div>
       ) : null}
   
@@ -115,6 +150,8 @@ function ShoppingCart() {
         className="input-text"
         type="tel"
         name="telefono"
+        value={telefono}
+        onChange={handleInputChange}
         placeholder="Teléfono"
         required
       />

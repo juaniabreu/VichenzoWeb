@@ -17,7 +17,6 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
         <ProductoProvider>
           <CartProvider>
             {user && <Header />}
@@ -66,7 +65,6 @@ function App() {
             </Routes>
           </CartProvider>
         </ProductoProvider>
-      </BrowserRouter>
     </>
   );
 }

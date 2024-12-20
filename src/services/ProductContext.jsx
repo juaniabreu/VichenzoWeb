@@ -9,6 +9,7 @@ export const ProductoProvider = ({ children }) => {
   const [cantProductos, setCantProductos] = useState(0);
   const [allProductos, setAllProductos] = useState([]);
   const [productosActivos, setProductosActivos] = useState([]);
+  
   const getallProductos = async () => {
    try{
     const response = await api.get("/api/productos")
@@ -42,6 +43,7 @@ export const ProductoProvider = ({ children }) => {
   return (
     <ProductContext.Provider
       value={{
+        getallProductos,
         allProductos,
         setAllProductos,
         total,

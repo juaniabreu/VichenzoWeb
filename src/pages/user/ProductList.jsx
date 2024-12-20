@@ -9,6 +9,8 @@ function ProductList() {
     const {cart,setCart} = useContext(CartContext)
 
   useEffect(() => {}, []);
+
+  
   function addToCart(producto) {
     const productoPresente = cart.findIndex((item) => item.id === producto.id);
     if (productoPresente >= 0) {
@@ -31,7 +33,7 @@ function ProductList() {
   <div className="productos-grid">
     {productosActivos.map((producto) => (
       <div className="producto-card" key={producto.id}>
-        <img className="producto-imagen" src={producto.imagenUrl} alt={producto.nombre} />
+        <img className="producto-imagen" src="/img/noquis-al-huevo.jpg" alt={producto.nombre} />
         <h1 className="producto-nombre">{producto.nombre}</h1>
         <h2 className="producto-precio">${producto.precio}</h2>
         <button
